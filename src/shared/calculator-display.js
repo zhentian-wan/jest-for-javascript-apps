@@ -18,7 +18,7 @@ class CalculatorDisplay extends React.Component {
       <div
         {...props}
         css={{
-          color: 'white',
+          color: 'yellow',
           background: '#1c191c',
           lineHeight: '130px',
           fontSize: '6em',
