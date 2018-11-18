@@ -1,4 +1,4 @@
-import {getFormattedValue} from '../utils.js';
+import {getFormattedValue} from '../shared/utils';
 
 test('getFormattedValue should work', () => {
     const res = getFormattedValue('1234.0');

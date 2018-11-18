@@ -1,4 +1,4 @@
-import {getFlyingSuperHeros} from '../super-heros';
+import {getFlyingSuperHeros} from '../shared/super-heros';
 
 test('returns super heros that can fly', () => {
   const flyingHeros = getFlyingSuperHeros()
