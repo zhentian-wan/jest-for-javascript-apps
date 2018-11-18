@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from 'react-testing-library'
+import {render} from 'calculator-test-util'
 import CalculatorDisplay from '../shared/calculator-display'
 
 test('mounts', () => {
