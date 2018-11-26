@@ -1,21 +1,8 @@
-const path = require('path');
-
 module.exports = {
+    ...require('./jest-common'),
     testEnvironment: 'jest-environment-jsdom', //'jest-environment-node',
-    moduleDirectories: [
-        'node_modules', 
-        path.join(__dirname, 'src'), 
-        'shared',
-        path.join(__dirname, 'test'),
-    ],
-    moduleNameMapper: {
-        '\\.module\\.css$': 'identity-obj-proxy',
-        '\\.css$': require.resolve('./test/style-mock.js')
-    }, 
-    snapshotSerializers: ['jest-serializer-path'],
     // after jest is loaded
-    setupTestFrameworkScriptFile: require.resolve('./test/setup-tests.js'),
-    collectCoverageFrom: ['**/src/**/*.js'],
+    setupTestFrameworkScriptFile: require.resolve('./setup-tests.js'),
     coverageThreshold: {
         global: {
             statements: 80,
@@ -29,7 +16,7 @@ module.exports = {
             lines: 100,
             functions: 100,
         }
-    },
+    },   
     watchPlugins: [
         'jest-watch-typeahead/filename',
         'jest-watch-typeahead/testname',
