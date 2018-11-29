@@ -1,6 +1,6 @@
 module.exports = {
     ...require('./test/jest-common'),
-    projects: ['./test/jest-client.js', './test/jest-server.js'],
+    projects: ['./test/jest-lint.js', './test/jest-client.js', './test/jest-server.js'],
     coverageThreshold: {
         global: {
             statements: 80,

@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
     ...require('./jest-common'),
     displayName: 'server',
