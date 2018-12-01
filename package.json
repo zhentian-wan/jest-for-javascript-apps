@@ -15,7 +15,6 @@
     "lint": "jest --config test/jest-lint.js",
     "format": "prettier \"**/*.js\" --write",
     "validate": "npm run test && npm run build",
-    "precommit": "lint-staged",
     "setup": "npm run setup && npm run validate"
   },
   "keywords": [],
@@ -34,6 +33,7 @@
     "babel-plugin-emotion": "^9.2.4",
     "css-loader": "^0.28.11",
     "cypress": "^3.1.2",
+    "cypress-testing-library": "^2.3.3",
     "eslint": "^5.0.1",
     "eslint-config-kentcdodds": "^14.0.0",
     "eslint-import-resolver-jest": "^2.1.1",
