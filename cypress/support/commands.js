@@ -23,3 +23,14 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import {userBuilder} from '../support/generate'
+
+Cypress.Commands.add('createUser', (overrides) => {
+    const user = userBuilder(overrides);
+    // send a http request to server to create a new user
+    cy.request({
+        url: 'http://localhost:3000/register',
+        method: 'POST',
+        body: user
+    }).then(response => response.body.user)
+})
