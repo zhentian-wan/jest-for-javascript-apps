@@ -35,12 +35,22 @@ Cypress.Commands.add('createUser', overrides => {
   }).then(({body}) => body.user)
 })
 
+Cypress.Commands.add('login', user => {
+    cy.request({
+        url: 'http://localhost:3000/login',
+        method: 'POST',
+        body: user,
+    }).then(({body}) => {
+      window.localStorage.setItem('token', body.user.token)
+    })
+  })
+
 Cypress.Commands.add('assertHome', () => {
   cy.url().should('eq', `${Cypress.config().baseUrl}/`)
 })
 
 Cypress.Commands.add('assertLoggedInAs', user => {
-  user
+  cy
     .window()
     .its('localStorage.token')
     .should('be.a', 'string')
